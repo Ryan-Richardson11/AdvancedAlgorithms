@@ -16,24 +16,25 @@ def MCSS(a):
     Initializes largest and accumulator to zero and itterates over inputted vector with a single for loop.
     Adds values to the accumulator and checks if acc > largest, if it is acc = largest.
     Skips if the start of iteration is negative and resets acc to zero.
-    Returns the starting and ending indecies.
+    Returns the starting and ending indicies.
     """
-    largest, acc, start, end = 0, 0, 0, 0
+
+    largest, acc, start, end, current = 0, 0, 0, 0, 0
     for j in range(len(a)):
         acc += a[j]
-        if (acc > largest):
+        if acc > largest:
             largest = acc
+            start = current
             end = j
-            start = end - acc + 1
-        elif (acc < 0):
+        if acc < 0:
             acc = 0
-            start = j + 1
-    return largest, start, end
+            current = j + 1
+    return largest, f"Starting Index: {start} Ending Index: {end}"
 
 
 def main():
     """
-    Calls generate_vector() as v then passes it as an argument through MCSS.
+    Calls generate_vector() as v then passes it as an argument through MCSS and prints the sum.
     """
     v = generate_vector()
     print(v)
