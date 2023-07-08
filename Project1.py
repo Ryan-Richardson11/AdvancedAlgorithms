@@ -10,20 +10,29 @@ def generate_vector():
         vector.append(random.randint(-1000, 1000))
     return vector
 
-def selection(v):
-    indexing_length = range(0, len(v)-1)
-    for i in indexing_length:
-        min_value = i
-        for j in range(i+1, len(v)):
-            if v[j] < v[min_value]:
-                min_value = j
-        if min_value != i:
-            v[min_value], v[i] = v[i], v[min_value]
-    return v
+def swap(A, i, j):
+    """
+    Input: An array A and indicies i and j.
+    Output: An array where A[i] and A[j] have been swapped.
+    """
+    temp = A[i]
+    A[i] = A[j]
+    A[j] = temp
+
+def bubble_sort(A):
+    """
+    Input: An array of A integers.
+    Output: An array A sorted in increasing order.
+    """
+    for i in range(len(A)-1):
+        for j in range(len(A)-i-1):
+            if A[j+1] < A[j]:
+                swap(A, j+1, j)
+
 
 def main():
     v = generate_vector()
-    sorted = selection(v)
+    sorted = bubble_sort(v)
     print(sorted)
 
 if __name__ == "__main__":
