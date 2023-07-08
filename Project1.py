@@ -12,6 +12,7 @@ def generate_vector(n):
 
 def swap(A, i, j):
     """
+    swap(): Helper function for the bubble sort algorithm to swap indicies.
     Input: An array A and indicies i and j.
     Output: An array where A[i] and A[j] have been swapped.
     """
@@ -21,6 +22,7 @@ def swap(A, i, j):
 
 def bubble_sort(A):
     """
+    bubble_sort(): Sorts a vector using the bubble sort algorithm.
     Input: An array of A integers.
     Output: An array A sorted in increasing order.
     """
@@ -31,6 +33,9 @@ def bubble_sort(A):
     return A
 
 def main():
+    """
+    main(): Sorts the vector for each size 1000 to 10000
+    """
     v1 = generate_vector(1000)
     sorted = bubble_sort(v1)
     print(sorted)
