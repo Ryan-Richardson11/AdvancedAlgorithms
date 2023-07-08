@@ -1,4 +1,5 @@
 import random
+import cProfile
 
 def generate_vector(n):
     """
@@ -41,50 +42,50 @@ def main():
     print(sorted)
     print("\n")
     
-    v2 = generate_vector(2000)
-    sorted = bubble_sort(v2)
-    print(sorted)
-    print("\n")
+    # v2 = generate_vector(2000)
+    # sorted = bubble_sort(v2)
+    # print(sorted)
+    # print("\n")
 
-    v3 = generate_vector(3000)
-    sorted = bubble_sort(v3)
-    print(sorted)
-    print("\n")
+    # v3 = generate_vector(3000)
+    # sorted = bubble_sort(v3)
+    # print(sorted)
+    # print("\n")
 
-    v4 = generate_vector(4000)
-    sorted = bubble_sort(v4)
-    print(sorted)
-    print("\n")
+    # v4 = generate_vector(4000)
+    # sorted = bubble_sort(v4)
+    # print(sorted)
+    # print("\n")
 
-    v5 = generate_vector(5000)
-    sorted = bubble_sort(v5)
-    print(sorted)
-    print("\n")
+    # v5 = generate_vector(5000)
+    # sorted = bubble_sort(v5)
+    # print(sorted)
+    # print("\n")
 
-    v6 = generate_vector(6000)
-    sorted = bubble_sort(v6)
-    print(sorted)
-    print("\n")
+    # v6 = generate_vector(6000)
+    # sorted = bubble_sort(v6)
+    # print(sorted)
+    # print("\n")
 
-    v7 = generate_vector(7000)
-    sorted = bubble_sort(v7)
-    print(sorted)
-    print("\n")
+    # v7 = generate_vector(7000)
+    # sorted = bubble_sort(v7)
+    # print(sorted)
+    # print("\n")
 
-    v8 = generate_vector(8000)
-    sorted = bubble_sort(v8)
-    print(sorted)
-    print("\n")
+    # v8 = generate_vector(8000)
+    # sorted = bubble_sort(v8)
+    # print(sorted)
+    # print("\n")
 
-    v9 = generate_vector(9000)
-    sorted = bubble_sort(v9)
-    print(sorted)
-    print("\n")
+    # v9 = generate_vector(9000)
+    # sorted = bubble_sort(v9)
+    # print(sorted)
+    # print("\n")
 
-    v10 = generate_vector(10000)
-    sorted = bubble_sort(v10)
-    print(sorted)
-    print("\n")
+    # v10 = generate_vector(10000)
+    # sorted = bubble_sort(v10)
+    # print(sorted)
+    # print("\n")
 
 if __name__ == "__main__":
-    main()
+    cProfile.run("main()")
