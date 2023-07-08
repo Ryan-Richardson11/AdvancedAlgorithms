@@ -9,3 +9,17 @@ def generate_vector():
     for i in range(0, 999):
         vector.append(random.randint(-100, 100))
     return vector
+
+def selection(v):
+    indexing_length = range(0, len(v)-1)
+    for i in indexing_length:
+        min_value = i
+        for j in range(i+1, len(v)):
+            if v[j] < v[min_value]:
+                min_value = j
+        if min_value != i:
+            v[min_value], v[i] = v[i], v[min_value]
+
+    return v
+
+def main():
