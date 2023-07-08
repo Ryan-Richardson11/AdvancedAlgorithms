@@ -1,12 +1,12 @@
 import random
 
-def generate_vector():
+def generate_vector(n):
     """
     generate_vector(): 
     Creates an empty list then appends a random number from -100 to 100, 1000 times. The vector is then returned.
     """
     vector = []
-    for i in range(0, 999):
+    for i in range(n):
         vector.append(random.randint(-1000, 1000))
     return vector
 
@@ -28,12 +28,58 @@ def bubble_sort(A):
         for j in range(len(A)-i-1):
             if A[j+1] < A[j]:
                 swap(A, j+1, j)
-
+    return A
 
 def main():
-    v = generate_vector()
-    sorted = bubble_sort(v)
+    v1 = generate_vector(1000)
+    sorted = bubble_sort(v1)
     print(sorted)
+    print("\n")
+    
+    v2 = generate_vector(2000)
+    sorted = bubble_sort(v2)
+    print(sorted)
+    print("\n")
+
+    v3 = generate_vector(3000)
+    sorted = bubble_sort(v3)
+    print(sorted)
+    print("\n")
+
+    v4 = generate_vector(4000)
+    sorted = bubble_sort(v4)
+    print(sorted)
+    print("\n")
+
+    v5 = generate_vector(5000)
+    sorted = bubble_sort(v5)
+    print(sorted)
+    print("\n")
+
+    v6 = generate_vector(6000)
+    sorted = bubble_sort(v6)
+    print(sorted)
+    print("\n")
+
+    v7 = generate_vector(7000)
+    sorted = bubble_sort(v7)
+    print(sorted)
+    print("\n")
+
+    v8 = generate_vector(8000)
+    sorted = bubble_sort(v8)
+    print(sorted)
+    print("\n")
+
+    v9 = generate_vector(9000)
+    sorted = bubble_sort(v9)
+    print(sorted)
+    print("\n")
+
+    v10 = generate_vector(10000)
+    sorted = bubble_sort(v10)
+    print(sorted)
+    print("\n")
 
 if __name__ == "__main__":
     main()
