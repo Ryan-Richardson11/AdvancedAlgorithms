@@ -7,7 +7,7 @@ def generate_vector():
     """
     vector = []
     for i in range(0, 999):
-        vector.append(random.randint(-100, 100))
+        vector.append(random.randint(-1000, 1000))
     return vector
 
 def selection(v):
@@ -19,7 +19,12 @@ def selection(v):
                 min_value = j
         if min_value != i:
             v[min_value], v[i] = v[i], v[min_value]
-
     return v
 
 def main():
+    v = generate_vector()
+    sorted = selection(v)
+    print(sorted)
+
+if __name__ == "__main__":
+    main()
