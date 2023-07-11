@@ -7,7 +7,7 @@ def generate_array():
     """
     a = []
     for i in range(0, 1000):
-        a.append(random.randint(1, 100))
+        a.append(random.randint(0, 9))
     return a
 
 def find_mode_brute(a):
@@ -27,31 +27,35 @@ def find_mode(a):
     max_count = 0
     a.sort()
 
+    count = 0
     for i in range(len(a)):
-        counter = a.count(a[i])
-        if counter > max_count:
-            max_count = counter
+        if i < len(a) - 1 and a[i] == a[i+1]:
+            count += 1
+        else:
+            count = 0
+        if count > max_count:
+            max_count = count
             mode = a[i]
     return mode
 
-def find_mode_set(a):
-    mode = None
-    max_count = 0
-    distinct_values = set(a)
+# def find_mode_set(a):
+#     mode = None
+#     max_count = 0
+#     distinct_values = set(a)
 
-    for value in distinct_values:
-        counter = a.count(value)
-        if counter > max_count:
-            max_count = counter
-            mode = value
+#     for value in distinct_values:
+#         counter = a.count(value)
+#         if counter > max_count:
+#             max_count = counter
+#             mode = value
 
-    return mode
+#     return mode
 
 def main():
     a = generate_array()
-    print(a)
+
     print(find_mode_brute(a))
     print(find_mode(a))
-    print(find_mode_set(a))
+    # print(find_mode_set(a))
 
 main()
