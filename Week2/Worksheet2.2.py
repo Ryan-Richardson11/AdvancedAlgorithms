@@ -1,3 +1,15 @@
+import random
+
+def generate_array():
+    """
+    generate_array(): 
+    Creates an empty list then appends a random number from 1 to 100, 1,000 times. The array is then returned.
+    """
+    a = []
+    for i in range(0, 1000):
+        a.append(random.randint(1, 100))
+    return a
+
 def find_mode_brute(a):
     max_value, max_count = 0, 0
     for i in range(len(a)):
@@ -13,6 +25,7 @@ def find_mode_brute(a):
 def find_mode(a):
     mode = None
     max_count = 0
+    a.sort()
 
     for i in range(len(a)):
         counter = a.count(a[i])
@@ -21,8 +34,24 @@ def find_mode(a):
             mode = a[i]
     return mode
 
+def find_mode_set(a):
+    mode = None
+    max_count = 0
+    distinct_values = set(a)
+
+    for value in distinct_values:
+        counter = a.count(value)
+        if counter > max_count:
+            max_count = counter
+            mode = value
+
+    return mode
+
 def main():
-    a = [3, 3, 3, 2, 5, 76, 734, 23, 5, 5, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    a = generate_array()
+    print(a)
     print(find_mode_brute(a))
     print(find_mode(a))
+    print(find_mode_set(a))
+
 main()
