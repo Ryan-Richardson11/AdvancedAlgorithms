@@ -12,6 +12,8 @@ def generate_vector():
 
 def is_unique(n):
     """
+    is_unique(): Uses brute for to iterate through the vector and check if any of the values match.
+    Takes 1 vector as an argument and returns Not Unique or Unique.
     """
     for i in range(len(n)):
         for j in range(i+1, len(n)):
@@ -20,6 +22,9 @@ def is_unique(n):
     return "Unqiue"
             
 def main():
+    """
+    main(): Stores a generated vector in the variable v, then prints it and passes it through is_unique as an argument.
+    """
     v = generate_vector()
     print(v)
     print(is_unique(v))
