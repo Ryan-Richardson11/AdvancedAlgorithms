@@ -35,7 +35,9 @@ def find_mode(a):
             count = 0
         if count > max_count:
             max_count = count
-            mode = a[i]
+            mode = [a[i]]
+        elif count == max_count:
+            mode.append(a[i])
     return mode
 
 # def find_mode_set(a):
@@ -56,6 +58,5 @@ def main():
 
     print(find_mode_brute(a))
     print(find_mode(a))
-    # print(find_mode_set(a))
 
 main()
