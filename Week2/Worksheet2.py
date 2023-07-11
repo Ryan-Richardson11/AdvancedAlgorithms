@@ -12,11 +12,10 @@ def generate_vector():
 
 def is_unique(n):
     for i in range(len(n)):
-        for j in range(len(n)):
-            if n[i] == n[j+1]:
+        for j in range(i+1, len(n)):
+            if n[i] == n[j]:
                 return "Not Unique"
-            else:
-                return "Unqiue"
+    return "Unqiue"
             
 def main():
     v = generate_vector()
