@@ -158,12 +158,18 @@ class AVLTree(object):
 def main():
     myTree = AVLTree()
     root = None
-
+    # THIS WILL BE REMOVED O(n)
+    data = []
     while True:
         ans = int(input("Please enter a positive integer: "))
+        data.append(ans)
         if ans > 0:
-            root = myTree.insert_node(root, ans)
-            myTree.printHelper(root, "", True)
+            if ans not in data:
+                root = myTree.insert_node(root, ans)
+                myTree.printHelper(root, "", True)
+            else:
+                root = myTree.delete_node(root, ans)
+                myTree.printHelper(root, "", True)
         else:
             break
 
