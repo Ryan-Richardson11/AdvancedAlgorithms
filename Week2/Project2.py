@@ -169,7 +169,7 @@ def main():
     for num in nums:
         root = myTree.insert_node(root, num)
     myTree.printHelper(root, "", True)
-    print("********PostOrder Transversal:")
+    print("********PostOrder Traversal:")
     myTree.printPostOrder(root)
 
 main()
