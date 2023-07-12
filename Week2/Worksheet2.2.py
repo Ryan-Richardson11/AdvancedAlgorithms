@@ -10,7 +10,6 @@ def generate_array():
         a.append(random.randint(0, 9))
     return a
 
-
 def find_mode(a):
     """"
     find_mode(): Uses transform and conquer by first sorting the array then iterating through each sequence and adding to a counter.
@@ -23,14 +22,14 @@ def find_mode(a):
 
     count = 1
     for i in range(len(a)):
-        if i < len(a) - 1 and a[i] == a[i+1]:
+        if a[i-1] == a[i]:
             count += 1
         else:  
             if count > max_count:
                 max_count = count
-                mode = [a[i]]
+                mode = [a[i-1]]
             elif count == max_count:
-                mode.append(a[i])
+                mode.append(a[i-1])
             count = 1
     return mode
 
@@ -39,6 +38,8 @@ def main():
     main(): Calls generate_array to create a random array and passes it through find_mode() to calculate the mode of the array.
     """
     a = generate_array()
+    print(find_mode_brute(a))
     print(find_mode(a))
+
 
 main()
