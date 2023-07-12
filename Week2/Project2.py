@@ -162,14 +162,15 @@ def main():
     data = []
     while True:
         ans = int(input("Please enter a positive integer: "))
-        data.append(ans)
         if ans > 0:
             if ans not in data:
                 root = myTree.insert_node(root, ans)
                 myTree.printHelper(root, "", True)
+                data.append(ans)
             else:
                 root = myTree.delete_node(root, ans)
                 myTree.printHelper(root, "", True)
+                data.remove(ans)
         else:
             break
 
