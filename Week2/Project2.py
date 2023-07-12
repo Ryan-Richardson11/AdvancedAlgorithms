@@ -129,7 +129,7 @@ class AVLTree(object):
 
     def printPreOrder(self, root):
         if not root:
-            return 
+            return
         print(root.data, end=" ")
         self.printPreOrder(root.left)
         self.printPreOrder(root.right)
@@ -140,13 +140,6 @@ class AVLTree(object):
         self.printInOrder(root.left)
         print(root.data, end=" ")
         self.printInOrder(root.right)
-
-    def printPostOrder(self, root):
-        if not root:
-            return
-        self.printPostOrder(root.left)
-        self.printPostOrder(root.right)
-        print(root.data, end=" ")
 
     # Print the tree
     def printHelper(self, currPtr, indent, last):
@@ -166,10 +159,25 @@ def main():
     myTree = AVLTree()
     root = None
     nums = [33, 13, 52, 9, 21, 61, 8, 11]
+
     for num in nums:
         root = myTree.insert_node(root, num)
+
     myTree.printHelper(root, "", True)
-    print("********PostOrder Traversal:")
-    myTree.printPostOrder(root)
+
+    data = 13
+    root = myTree.delete_node(root, data)
+    print("After Deletion of {}: ".format(data))
+    myTree.printHelper(root, "", True)
+
+    data = 27
+    root = myTree.insert_node(root, data)
+    print("After Insertion of {}: ".format(data))
+    myTree.printHelper(root, "", True)
+
+    data = 17
+    root = myTree.insert_node(root, data)
+    print("After Insertion of {}: ".format(data))
+    myTree.printHelper(root, "", True)
 
 main()
