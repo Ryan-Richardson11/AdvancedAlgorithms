@@ -38,7 +38,6 @@ def main():
     main(): Calls generate_array to create a random array and passes it through find_mode() to calculate the mode of the array.
     """
     a = generate_array()
-    print(find_mode_brute(a))
     print(find_mode(a))
 
 
