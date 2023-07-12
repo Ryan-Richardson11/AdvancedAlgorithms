@@ -158,26 +158,13 @@ class AVLTree(object):
 def main():
     myTree = AVLTree()
     root = None
-    nums = [33, 13, 52, 9, 21, 61, 8, 11]
 
-    for num in nums:
-        root = myTree.insert_node(root, num)
-
-    myTree.printHelper(root, "", True)
-
-    data = 13
-    root = myTree.delete_node(root, data)
-    print("After Deletion of {}: ".format(data))
-    myTree.printHelper(root, "", True)
-
-    data = 27
-    root = myTree.insert_node(root, data)
-    print("After Insertion of {}: ".format(data))
-    myTree.printHelper(root, "", True)
-
-    data = 17
-    root = myTree.insert_node(root, data)
-    print("After Insertion of {}: ".format(data))
-    myTree.printHelper(root, "", True)
+    while True:
+        ans = int(input("Please enter a positive integer: "))
+        if ans > 0:
+            root = myTree.insert_node(root, ans)
+            myTree.printHelper(root, "", True)
+        else:
+            break
 
 main()
