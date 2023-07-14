@@ -1,15 +1,3 @@
-import random
-
-def generate_array():
-    """
-    generate_array(): 
-    Creates an empty list then appends a random number from 1 to 100, 1,000 times. The array is then returned.
-    """
-    a = []
-    for i in range(0, 1000):
-        a.append(random.randint(0, 9))
-    return a
-
 def find_mode(a):
     """"
     find_mode(): Uses transform and conquer by first sorting the array then iterating through each sequence and adding to a counter.
@@ -37,7 +25,7 @@ def main():
     """
     main(): Calls generate_array to create a random array and passes it through find_mode() to calculate the mode of the array.
     """
-    a = generate_array()
+    a = [2, 5, 2, 3, 4, 7, 3]
     print(find_mode(a))
 
 

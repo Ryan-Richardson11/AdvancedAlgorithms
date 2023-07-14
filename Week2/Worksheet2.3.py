@@ -142,6 +142,9 @@ class AVLTree(object):
         self.printInOrder(root.right)
 
     def printPostOrder(self, root):
+        """
+        Searches the left tree, then the right tree, then the root. Post order due to the root being the last element traversed.
+        """
         if not root:
             return
         self.printPostOrder(root.left)
@@ -163,6 +166,9 @@ class AVLTree(object):
             self.printHelper(currPtr.right, indent, True)
 
 def main():
+    """
+    Main(): Calls printPostOrder on the integers inserted into the tree from nums. Prints the result.
+    """
     myTree = AVLTree()
     root = None
     nums = [33, 13, 52, 9, 21, 61, 8, 11]
