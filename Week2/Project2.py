@@ -1,3 +1,5 @@
+import math
+
 # Create a tree node
 class TreeNode(object):
     def __init__(self, data):
@@ -37,6 +39,19 @@ class AVLTree(object):
                 return self.leftRotate(root)
 
         return root
+    
+    # Input: An array A in sorted order, end > start > 0, and key k.
+    # Output: Index i such that A[i] = k, or None if no match is found.
+    def BinarySearch(self, A, start, end, k):
+        m = math.floor((end + start)/2)
+        if start > end:
+            return None
+        elif A[m] == k:
+            return m
+        elif A[m] > k:
+            return self.BinarySearch(A, start, m-1, k)
+        else:
+            return self.BinarySearch(A, m+1, end, k)
 
     # Function to delete a node
     def delete_node(self, root, data):
@@ -156,23 +171,39 @@ class AVLTree(object):
             self.printHelper(currPtr.right, indent, True)
 
 def main():
-# Test    
+    # myTree = AVLTree()
+    # root = None
+    # # THIS WILL BE REMOVED O(n)
+    # data = []
+    # while True:
+    #     ans = int(input("Please enter a positive integer: "))
+    #     if ans > 0:
+    #         if ans not in data:
+    #             root = myTree.insert_node(root, ans)
+    #             myTree.printHelper(root, "", True)
+    #             data.append(ans)
+    #         else:
+    #             root = myTree.delete_node(root, ans)
+    #             myTree.printHelper(root, "", True)
+    #             data.remove(ans)
+    #     else:
+    #         break
+
+
     myTree = AVLTree()
     root = None
-    # THIS WILL BE REMOVED O(n)
-    data = []
+
     while True:
         ans = int(input("Please enter a positive integer: "))
         if ans > 0:
-            if ans not in data:
+            if ans not in myTree.BinarySearch(myTree, 0, len(myTree.data)-1, ans):
                 root = myTree.insert_node(root, ans)
                 myTree.printHelper(root, "", True)
-                data.append(ans)
             else:
                 root = myTree.delete_node(root, ans)
                 myTree.printHelper(root, "", True)
-                data.remove(ans)
         else:
             break
+
 
 main()
