@@ -156,6 +156,7 @@ class AVLTree(object):
             self.printHelper(currPtr.right, indent, True)
 
 def main():
+# Test    
     myTree = AVLTree()
     root = None
     # THIS WILL BE REMOVED O(n)
