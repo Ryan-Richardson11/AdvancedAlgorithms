@@ -45,10 +45,10 @@ class AVLTree(object):
     def DFS(self, root, data):
         if root == None:
             return False
-        elif root == root.data:
+        elif data == root.data:
             return True
-        elif root > data:
-            self.DFS(root.left, data)
+        elif root.data > data:
+            return self.DFS(root.left, data)
         else:
             return self.DFS(root.right, data)
 
@@ -170,25 +170,6 @@ class AVLTree(object):
             self.printHelper(currPtr.right, indent, True)
 
 def main():
-    # myTree = AVLTree()
-    # root = None
-    # # THIS WILL BE REMOVED O(n)
-    # data = []
-    # while True:
-    #     ans = int(input("Please enter a positive integer: "))
-    #     if ans > 0:
-    #         if ans not in data:
-    #             root = myTree.insert_node(root, ans)
-    #             myTree.printHelper(root, "", True)
-    #             data.append(ans)
-    #         else:
-    #             root = myTree.delete_node(root, ans)
-    #             myTree.printHelper(root, "", True)
-    #             data.remove(ans)
-    #     else:
-    #         break
-
-
 # USE DFS ALGORITHM
     myTree = AVLTree()
     root = None
