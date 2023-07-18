@@ -40,8 +40,8 @@ class AVLTree(object):
 
         return root
     
-    # Input:
-    # Output:
+    # Input: A starting root and the data point that is being searched for.
+    # Output: True if the data point is already in the tree and False if it is not.
     def DFS(self, root, data):
         if root == None:
             return False
@@ -170,7 +170,10 @@ class AVLTree(object):
             self.printHelper(currPtr.right, indent, True)
 
 def main():
-# USE DFS ALGORITHM
+    """
+    main(): Creates a while loop that repeatedly asks for a positive integer, else it will break.
+    If the integer is already in the tree it will remove it, if it is not it will add it and reprint.
+    """
     myTree = AVLTree()
     root = None
 
