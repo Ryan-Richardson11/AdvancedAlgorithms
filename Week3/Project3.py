@@ -7,8 +7,13 @@ def tribo(n):
     return c
 
 def main():
-    while True:
-        n = int(eval(input("Choose an Integer: ")))
-        print(f"The {n}-th element of Tribonacci is {tribo(n)}")
+        while True:
+            try:
+                n = int(eval(input("Choose an Integer: ")))
+                if n > 0:
+                    print(f"The {n}-th element of Tribonacci is {tribo(n)}")
+                else:
+                    break
+            except: print("Please enter an integer > 0")
 
 main()
