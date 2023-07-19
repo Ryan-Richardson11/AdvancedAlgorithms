@@ -41,11 +41,20 @@ def layer(r, mat, perm, ans):
 
 def balanced01mat():
     print("Computing the number of balanced matrices")
-    n = 1
-    while ((n % 2) == 1) or (n < 0):
-        n = int(input("Enter an even matrix order:"))
-    perm = permutations(n)
-    ans = layer(0, [], perm, 0)
-    print("The number of balanced matrices is", ans)
+    perm_2 = permutations(2)
+    ans_2 = layer(0, [], perm_2, 0)
+    print("The number of balanced matrices is", ans_2)
+
+    perm_4 = permutations(4)
+    ans_4 = layer(0, [], perm_4, 0)
+    print("The number of balanced matrices is", ans_4)
+
+    # perm_6 = permutations(6)
+    # ans_6 = layer(0, [], perm_6, 0)
+    # print("The number of balanced matrices is", ans_6)
+
+    # perm_8 = permutations(8)
+    # ans_8 = layer(0, [], perm_8, 0)
+    # print("The number of balanced matrices is", ans_8)
 
 balanced01mat()
