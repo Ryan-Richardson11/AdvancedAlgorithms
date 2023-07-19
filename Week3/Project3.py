@@ -9,7 +9,7 @@ def tribo(n):
 def main():
         while True:
             try:
-                n = int(eval(input("Choose an Integer: ")))
+                n = int(eval(input("Choose a Positive Integer: ")))
                 if n > 0:
                     print(f"The {n}-th element of Tribonacci is {tribo(n)}")
                 else:
