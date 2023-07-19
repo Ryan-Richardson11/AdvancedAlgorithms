@@ -3,9 +3,12 @@ def tribo(n):
     if (n < 4):
         return 1
     for i in range(3, n):
-        a, b, c = c, b + c, a + b
+        a, b, c = b, c, a + b + c
     return c
 
 def main():
-    n = int(eval(input("Choose an Integer: ")))
-    print(f"The {n}-th element of Fibonacci is {tribo(n)}")
+    while True:
+        n = int(eval(input("Choose an Integer: ")))
+        print(f"The {n}-th element of Tribonacci is {tribo(n)}")
+
+main()
