@@ -40,21 +40,30 @@ def layer(r, mat, perm, ans):
     return ans
 
 def balanced01mat():
+    """
+    balanced01mat(): Hardcodes the call to permutations on 2, 4, 6, and 8.
+    Prints out the number of balanced matrices for each call.
+    """
     print("Computing the number of balanced matrices")
+
+    # The number of balanced matrices is 2
     perm_2 = permutations(2)
     ans_2 = layer(0, [], perm_2, 0)
     print("The number of balanced matrices is", ans_2)
 
+    # The number of balanced matrices is 90
     perm_4 = permutations(4)
     ans_4 = layer(0, [], perm_4, 0)
     print("The number of balanced matrices is", ans_4)
 
-    # perm_6 = permutations(6)
-    # ans_6 = layer(0, [], perm_6, 0)
-    # print("The number of balanced matrices is", ans_6)
+    # The number of balanced matrices is 297200
+    perm_6 = permutations(6)
+    ans_6 = layer(0, [], perm_6, 0)
+    print("The number of balanced matrices is", ans_6)
 
-    # perm_8 = permutations(8)
-    # ans_8 = layer(0, [], perm_8, 0)
-    # print("The number of balanced matrices is", ans_8)
+    # The number of balanced matrices is too much
+    perm_8 = permutations(8)
+    ans_8 = layer(0, [], perm_8, 0)
+    print("The number of balanced matrices is", ans_8)
 
 balanced01mat()
