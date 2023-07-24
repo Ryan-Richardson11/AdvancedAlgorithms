@@ -31,5 +31,6 @@ def main():
     egyptian(121, 321)
     print("\n")
     egyptian(5, 123)
-
+    print("\n")
+    egyptian(5, 121)
 main()
