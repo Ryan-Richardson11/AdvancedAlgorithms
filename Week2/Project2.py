@@ -39,9 +39,9 @@ class AVLTree(object):
                 return self.leftRotate(root)
 
         return root
-    
-    # Input:
-    # Output:
+
+    # Input: starting root node and the data point that is being searched for.
+    # Output: True if the data point is in the tree and False if it is not.
     def DFS(self, root, data):
         if root == None:
             return False
