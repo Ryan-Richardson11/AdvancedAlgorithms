@@ -17,4 +17,5 @@ def egyptian(n, d):
 def main():
     print("Greedy Algorithm to Compute Egytian Fractions")
     egyptian(5, 121)
+    
 main()

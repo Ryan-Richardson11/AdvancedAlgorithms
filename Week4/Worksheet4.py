@@ -16,12 +16,7 @@ def egyptian(n, d):
 
 def main():
     print("Greedy Algorithm to Compute Egytian Fractions")
-    # stay = True
-    # while stay:
-    #     n = int(input("Enter the numerator: "))
-    #     d = int(input("Enter the denominator: "))
-    #     egyptian(n, d)
-    #     stay = ("n" != (input("\nCompute another? (no to stop) ")+" ")[0])
+
     egyptian(5, 6)
     print("\n")
     egyptian(7, 15)
@@ -31,6 +26,5 @@ def main():
     egyptian(121, 321)
     print("\n")
     egyptian(5, 123)
-    print("\n")
-    egyptian(5, 121)
+
 main()
