@@ -16,15 +16,19 @@ def egyptian(n, d):
 
 def main():
     print("Greedy Algorithm to Compute Egytian Fractions")
-
+    # Results 1/2 1/3
     egyptian(5, 6)
     print("\n")
+    # Results 1/3 1/8 1/120
     egyptian(7, 15)
     print("\n")
+    # Results 1/2 1/6 1/102
     egyptian(23, 34)
     print("\n")
+    # Results 1/3 1/23 1/7383
     egyptian(121, 321)
     print("\n")
+    # Results 1/25 1/1538 1/4729350
     egyptian(5, 123)
 
 main()

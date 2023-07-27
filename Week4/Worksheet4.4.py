@@ -19,6 +19,10 @@ def knapsack(v, w, cap):
     return ans           # returns the list of added items
 
 def main():
+    """
+    Case for the knapsack greedy algorithm requiring more than one type of item
+    Results: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0]
+    """
     values = [4, 3, 12]
     weights = [1, 10, 2]
     print(knapsack(values, weights, 49))
