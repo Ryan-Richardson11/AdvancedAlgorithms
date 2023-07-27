@@ -3,7 +3,8 @@
 def knapsack(name, value, height, width, depth, cap):
     rwv = []         # triplet ratio, weight, value, index
     for i in range(len(value)):
-        volume = height[i] * width[i] * depth[i]
+        # Change to a function
+        volume = height[i] * width[i] * depth[i] 
         rwv.append([name[i], value[i] / volume, volume, value[i], i])
     rwv.sort(reverse=True)    # sort from high to low rate
     ans = []                     # the list of added items
@@ -42,7 +43,6 @@ def main():
                 print(f"Item: {name[idx]} Value: {value[idx]} - Volume: {volume}")
                 tval += value[idx]
                 tvol += volume
-            print(f"Items: {len(answer)} - Value: ${tval} - Volume: {tvol} inches squared")
             print(f"The suggested items are {len(answer)} {name[idx]}'s with a total value of ${tval}. There were {capacity - tvol} square inches left unused.")
     
 main()
