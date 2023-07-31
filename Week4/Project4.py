@@ -6,7 +6,7 @@ def knapsack(name, value, height, width, depth, cap):
         # Change to a function
         volume = height[i] * width[i] * depth[i] 
         rvv.append([name[i], value[i] / volume, volume, value[i], i])
-    rvv.sort(reverse=True)    # sort from high to low rate
+    rvv.sort(key=lambda x: x[1], reverse=True)    # sort from high to low ratio
     ans = []                     # the list of added items
     tv = 0                                  # total volume
     found = True
@@ -22,9 +22,11 @@ def knapsack(name, value, height, width, depth, cap):
 
 def main():
     """
-    Reads lines from a csv file and appends each to a list
+    Reads lines from a csv file and appends each to a list for each index.
+    While loop controls flow for user capacity input, breaks if number < 1 is entered.
+    Prints Items, total value, and square inches left unused.
     """
-    my_file = open("C:\\Users\\Ryan\\Desktop\\AdvancedAlgorithms\Week4\\packs.csv", "r", encoding="utf-8-sig")
+    my_file = open("C:\\Users\\Ryan\\Desktop\\AdvancedAlgorithms\Week4\\packstest.csv", "r", encoding="utf-8-sig")
     name, value, height, width, depth = [], [], [], [], []
     for line in my_file:
         info = line.strip().split(",")
