@@ -16,18 +16,30 @@ class Queue:
             self.a_in = []
         return self.a_out.pop(0)
     
-    def generate_array(self, n):
-        arr = []
-        for i in range(n):
-            arr.append(random.randint(0, 100))
-        return arr
-
 
 Q = Queue()
+cheap, costly = 0, 0
+logical = len(Q.a_in)
+memory = logical
 while True:
     probRemove = int(input("Enter the probability of a dequeue (%): "))
     if probRemove <= 34 or probRemove >= 67:
         print("Value must at least 34 and no more than 67")
-        cheap, costly = 0, 0
+    else:
         for i in range(100000):
             if (random.randrange(100) < probRemove):
+                if logical > 0:
+                    Q.dequeue()
+                    costly += 1
+            else:
+                if logical > memory: 
+                    Q.enqueue(random.randint(0, 10))
+                    logical += 1
+                    cheap += 1
+                else:
+                    Q.enqueue(random.randint(0, 10))
+                    memory *= 2
+                    logical += 1
+                    costly +=1
+        break
+print(f"Probability of dequeue {probRemove}%, probability of enqueue {100 - probRemove}%")
