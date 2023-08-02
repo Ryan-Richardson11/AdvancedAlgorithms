@@ -2,7 +2,7 @@ import random
 
 class Queue:
 
-    def __inti__(self):
+    def __init__(self):
         self.a_in = []
         self.a_out = []
 
