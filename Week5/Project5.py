@@ -18,14 +18,15 @@ class Queue:
     
 
 Q = Queue()
-cheap, costly = 0, 0
-logical = len(Q.a_in)
-memory = logical
+
 while True:
     probRemove = int(input("Enter the probability of a dequeue (%): "))
     if probRemove <= 34 or probRemove >= 67:
         print("Value must at least 34 and no more than 67")
     else:
+        cheap, costly = 0, 0
+        logical = len(Q.a_in)
+        memory = logical
         for i in range(100000):
             if (random.randrange(100) < probRemove):
                 if logical > 0:
@@ -44,4 +45,4 @@ while True:
         break
 print(f"Probability of dequeue {probRemove}%, probability of enqueue {100 - probRemove}%")
 print(f"Costly: {costly:7} ({costly/(costly + cheap):3.1}%)")
-print(f"Costly: {cheap:7} ({cheap/(costly + cheap):3.1}%)")
+print(f"Cheap: {cheap:7} ({cheap/(costly + cheap):3.1}%)")
