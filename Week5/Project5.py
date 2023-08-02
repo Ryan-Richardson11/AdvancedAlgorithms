@@ -43,3 +43,5 @@ while True:
                     costly +=1
         break
 print(f"Probability of dequeue {probRemove}%, probability of enqueue {100 - probRemove}%")
+print(f"Costly: {costly:7} ({costly/(costly + cheap):3.1}%)")
+print(f"Costly: {cheap:7} ({cheap/(costly + cheap):3.1}%)")
