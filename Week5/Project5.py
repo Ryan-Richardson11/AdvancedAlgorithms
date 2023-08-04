@@ -25,24 +25,15 @@ while True:
         print("Value must at least 34 and no more than 67")
     else:
         cheap, costly = 0, 0
-        logical = len(Q.a_in)
-        memory = logical
         for i in range(100000):
             if (random.randrange(100) < probRemove):
-                if logical > 0:
-                    Q.dequeue()
-                    costly += 1
+                Q.dequeue()
+                costly += 1
             else:
-                if logical > memory: 
-                    Q.enqueue(random.randint(0, 10))
-                    logical += 1
-                    cheap += 1
-                else:
-                    Q.enqueue(random.randint(0, 10))
-                    memory *= 2
-                    logical += 1
-                    costly +=1
+                Q.enqueue(random.randint(0, 10))
+                cheap += 1
         break
+    
 print(f"Probability of dequeue {probRemove}%, probability of enqueue {100 - probRemove}%")
 print(f"Costly: {costly:7} ({costly/(costly + cheap):3.1}%)")
 print(f"Cheap: {cheap:7} ({cheap/(costly + cheap):3.1}%)")
