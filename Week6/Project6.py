@@ -1,5 +1,6 @@
 import numpy as np
 
+variables = int(input("Please enter the number of variables: "))
 
 constraints = eval(input("Enter the data for the square matrix using stating the constraints (ex. [[2,4,5], [1,2,4], [8,0,3]]): "))
 A = np.array(constraints)
@@ -10,3 +11,7 @@ coefficients = eval(input("Enter the coefficients of each variable for the objec
 b = np.array(coefficients)
 
 x = np.linalg.inv(A).dot(b)
+
+
+print(inv_A)
+print(x)
