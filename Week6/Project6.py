@@ -1,13 +1,12 @@
 import numpy as np
 
 
-constraint_limits = eval(input("Please enter an array of constraints (ex. [[2,4,5], [1,2,4], [8,0,3]]): "))
-A = np.array(constraint_limits)
-
+constraints = eval(input("Enter the data for the square matrix using stating the constraints (ex. [[2,4,5], [1,2,4], [8,0,3]]): "))
+A = np.array(constraints)
 
 inv_A = np.linalg.inv(A)
 
-constraints = eval(input("Please enter the constraints for the problem (ex. [300, 200, 200]): "))
-b = np.array()
+coefficients = eval(input("Enter the coefficients of each variable for the objective function (ex. [300, 200, 200]): "))
+b = np.array(coefficients)
 
 x = np.linalg.inv(A).dot(b)
