@@ -19,7 +19,7 @@ import numpy as np
 
 
 #     # A = np.array(matrix)
-#     A = np.array([[2,4,5], [1,2,4], [8,0,3]])
+#     A = np.array([[4, 1, 8], [4, 2, 0], [5, 4, 3])
 #     # inv_A = np.linalg.inv(A)
 #     inv_A = np.linalg.inv(A)
 #     # b = np.array(constraint_limits)
@@ -42,29 +42,24 @@ import numpy as np
 
 def main():
     variables = 3
-    matrix = [[2, 4, 5], [1, 2, 4], [8, 0, 3]]
+    matrix = [[4, 1, 8], [4, 2, 0], [5, 4, 3]]
     constraint_limits = [300, 200, 300]
     coefficients = [3000, 2000, 2000]
+    const_count = len(constraint_limits)
 
-    A = np.array(matrix)
-    inv_A = np.linalg.inv(A)
-    b = np.array(constraint_limits)
-    x = np.linalg.inv(A).dot(b)
+    const_print = ', '.join([f"CONSTRAINT {i+1}" for i in range(const_count)])
+    print("[SUPPLY, " + const_print + ", PROFIT]")
 
-    print("[SUPPLY, CONSTRAINT 1, CONSTRAINT 2, CONSTRAINT 3, PROFIT]")
 
     for i in range(variables):
-        mat_row = matrix[i]
-        const = constraint_limits[i]
+        row = matrix[i]
+        row_str = ', '.join(str(val) for val in row)
         coefficient = coefficients[i]
+        print(f"[variable {i+1}, {row_str}, {coefficient}]")
 
-        row_str = ', '.join(str(val) for val in [f"{variable}" for variable in [f"variable {i+1}"] + mat_row + [coefficient]])
-        print(f"[{row_str}]")
+    constraint_str = ', '.join(str(val) for val in constraint_limits)
+    print(f"[AVAILABILITY, {constraint_str}]")
 
-    avail_str = ', '.join(str(val) for val in constraint_limits)
-    print(f"[AVAILABILITY, {avail_str}]")
-
-    print("Optimal Solution:", x)
 
 
 main()
