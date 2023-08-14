@@ -30,6 +30,14 @@ def best_combination(matrix):
 
     return [arr_one] + [arr_two] + [arr_three]
 
+def find_units(array, coefficients):
+    unit_array = [array[i] * coefficients[i] for i in range(len(array))]
+    return unit_array
+
+def solo_profit(units, coefficients):
+    unit_profit = [units[i] * coefficients[i] for i in range(len(units))]
+    return unit_profit
+
 def profit(array, coefficients):
     profit = sum(array[i] * coefficients[i] for i in range(len(array)))
     return profit
@@ -57,14 +65,16 @@ def main():
     x = np.linalg.inv(A).dot(b)
     
     for i in range(len(matrix)):
-        profit_for_variable = profit([matrix[i]], coefficients)
-        print(f"If only variable {i+1} is made, there would be a profit of: {profit_for_variable}. The number of units would be {matrix[i]}.")
+        var_A = np.array(matrix[i])
+        var_b = np.array(constraint_limits[i])
+        var_mat = np.linalg.inv(var_A).dot(var_b)
 
+        profit_for_variable = profit(var_mat, coefficients)
+        print(f"If only variable {i+1} is made, there would be a profit of: {profit_for_variable}. The number of units would be {var_mat[i]}.")
 
     best_profit = profit(x, coefficients)
     print(f"The balanced amount is {best_profit}. The breakdown is: {x} of each of the variables")
     print(f"The best possible solution is {best_profit} using the Balanced method.")
-
 
 
 main()
