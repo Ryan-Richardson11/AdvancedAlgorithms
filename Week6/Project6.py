@@ -55,11 +55,13 @@ def main():
     A = np.array(adjusted_matrix)
     b = np.array(constraint_limits)
     x = np.linalg.inv(A).dot(b)
-    best_profit = profit(x, coefficients)
-    for i in range(variables):
-        profit_for_variable = profit([x[i]], [coefficients[i]])
-        print(f"If only variable {i+1} is made, there would be a profit of: {profit_for_variable}. The number of units would be {x[i]}.")
+    
+    for i in range(len(matrix)):
+        profit_for_variable = profit([matrix[i]], coefficients)
+        print(f"If only variable {i+1} is made, there would be a profit of: {profit_for_variable}. The number of units would be {matrix[i]}.")
 
+
+    best_profit = profit(x, coefficients)
     print(f"The balanced amount is {best_profit}. The breakdown is: {x} of each of the variables")
     print(f"The best possible solution is {best_profit} using the Balanced method.")
 
