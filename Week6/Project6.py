@@ -5,18 +5,18 @@ def get_variables():
     return variables
 
 def get_matrix():
-    mat_input = input("Enter the data for the square matrix using stating the constraints (ex. 2 1 8:4 2 0:5 4 3): ")
+    mat_input = input("Enter the data for the square matrix stating the constraints, separate each row with a semicolon and each value with a space (ex. 2 1 8:4 2 0:5 4 3): ")
     mat_rows = mat_input.split(":")
     matrix = [list(map(int, row.split())) for row in mat_rows]
     return matrix
 
 def get_const():
-    constraint_limits = input("Enter the constraint limits (ex. 300 200 300): ")
+    constraint_limits = input("Enter the constraint limits with a space separating each (ex. 300 200 300): ")
     constraint_limits = list(map(int, constraint_limits.split()))
     return constraint_limits
 
 def get_coefficients():
-    coeffiecients = input("Enter the coefficients of each variable for the objective function (ex. 3000 2000 2000): ")
+    coeffiecients = input("Enter the coefficients of each variable for the objective function with a space separating each (ex. 3000 2000 2000): ")
     coeffiecients = list(map(int, coeffiecients.split()))
     return coeffiecients
 
