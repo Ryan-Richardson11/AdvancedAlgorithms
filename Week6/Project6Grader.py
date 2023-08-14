@@ -1,21 +1,5 @@
 import numpy as np
 
-def get_variables():
-    variables = int(input("Please enter the number of variables: "))
-    return variables
-
-def get_matrix():
-    matrix = eval(input("Enter the data for the square matrix using stating the constraints (ex. [[2, 1, 8], [4, 2, 0], [5, 4, 3]]): "))
-    return matrix
-
-def get_const():
-    constraint_limits = eval(input("Enter the constraint limits (ex. [300, 200, 300]): "))
-    return constraint_limits
-
-def get_coefficients():
-    coeffiecients = input("Enter the coefficients of each variable for the objective function (ex. 3000, 2000, 2000): ")
-    return coeffiecients
-
 def best_combination(matrix):
     arr_one = []
     arr_two = []
@@ -47,10 +31,18 @@ def profit(array, coefficients):
     return profit
         
 def main():
-    variables = 3
-    matrix = [[2, 1, 8], [4, 2, 0], [5, 4, 3]]
-    constraint_limits = [300, 200, 300]
-    coefficients = [3000, 2000, 2000]
+    # Testcase 1 (Chemical Factory)
+    # variables = 3
+    # matrix = [[2, 1, 8], [4, 2, 0], [5, 4, 3]]
+    # constraint_limits = [300, 200, 300]
+    # coefficients = [3000, 2000, 2000]
+
+    # Testcase 2 (Pants and Jackets)
+    variables = 2
+    matrix = [[2, 2], [3, 1]]
+    constraint_limits = [1500, 1000]
+    coefficients = [50, 40]
+
     const_count = len(constraint_limits)
 
     const_print = ', '.join([f"CONSTRAINT {i+1}" for i in range(const_count)])
