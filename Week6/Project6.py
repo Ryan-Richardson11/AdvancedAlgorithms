@@ -1,48 +1,41 @@
 import numpy as np
 
+def get_variables():
+    variables = int(input("Please enter the number of variables: "))
+    return variables
 
+def get_matrix():
+    matrix = eval(input("Enter the data for the square matrix using stating the constraints (ex. [[2, 1, 8], [4, 2, 0], [5, 4, 3]]): "))
+    return matrix
 
+def get_const():
+    constraint_limits = eval(input("Enter the constraint limits (ex. [300, 200, 300]): "))
+    return constraint_limits
 
+def get_coefficients():
+    coeffiecients = input("Enter the coefficients of each variable for the objective function (ex. 3000, 2000, 2000): ")
+    return coeffiecients
 
+def best_combination(matrix):
+    arr_one = []
+    arr_two = []
+    arr_three = []
 
-# def main():
+    for i in arr_one:
+        arr_one.append(matrix[i][0])
+    if len(matrix) > 1:
+        for j in arr_two:
+            arr_two.append(matrix[j][1])
+        if len(matrix) > 2:
+            for k in arr_three:
+                arr_three.append(matrix[k][0])
 
-#     # variables = int(input("Please enter the number of variables: "))
-#     # matrix = eval(input("Enter the data for the square matrix using stating the constraints (ex. [[2,4,5], [1,2,4], [8,0,3]]): "))
-#     # constraint_limits = eval(input("Enter the constraint limits (ex. [300, 200, 300]): "))
-#     # coeffiecients = input("Enter the coefficients of each variable for the objective function (ex. 3000, 2000, 2000): ")
+    return arr_one + arr_two + arr_three
 
-#     variables = 3
-#     matrix = [[2,4,5], [1,2,4], [8,0,3]]
-#     constraint_limits = [300, 200, 300]
-#     coefficients = 3000, 2000, 2000
-
-
-#     # A = np.array(matrix)
-#     A = np.array([[4, 1, 8], [4, 2, 0], [5, 4, 3])
-#     # inv_A = np.linalg.inv(A)
-#     inv_A = np.linalg.inv(A)
-#     # b = np.array(constraint_limits)
-#     b = np.array([300, 200, 300])
-#     # x = np.linalg.inv(A).dot(b)
-#     x = np.linalg.inv(A).dot(b)
-
-#     for i in range(variables):
-#         mat_row = matrix[i]
-#         const = constraint_limits[i]
-#         coefficient = coefficients[i]
-
-#         row_str = ', '.join(str(val) for val in mat_row)
-#         row_str2 = ', '.join(const)
-#         print(f"Variable {i+1}, {row_str}, {coefficient}")
-
-#         print(f"AVAILABILITY, {row_str2}")
-    
-    
 
 def main():
     variables = 3
-    matrix = [[4, 1, 8], [4, 2, 0], [5, 4, 3]]
+    matrix = [[2, 1, 8], [4, 2, 0], [5, 4, 3]]
     constraint_limits = [300, 200, 300]
     coefficients = [3000, 2000, 2000]
     const_count = len(constraint_limits)
@@ -59,6 +52,16 @@ def main():
 
     constraint_str = ', '.join(str(val) for val in constraint_limits)
     print(f"[AVAILABILITY, {constraint_str}]")
+
+    A = np.array(matrix)
+    b = np.array(constraint_limits)
+    x = np.linalg.inv(A).dot(b)
+
+    print("If only variable {} is made, there would be a profit of: {}. The number of units would be {}.")
+    print("If only variable {} is made, there would be a profit of: {}. The number of units would be {}.")
+    print("If only variable {} is made, there would be a profit of: {}. The number of units would be {}.")
+    print(f"The balanced amount is . The breakdown is: {x} of each of the variables")
+    print("The best possible solution is {} using the Balanced method.")
 
 
 
