@@ -21,18 +21,22 @@ def best_combination(matrix):
     arr_two = []
     arr_three = []
 
-    for i in arr_one:
-        arr_one.append(matrix[i][0])
-    if len(matrix) > 1:
-        for j in arr_two:
-            arr_two.append(matrix[j][1])
-        if len(matrix) > 2:
-            for k in arr_three:
-                arr_three.append(matrix[k][0])
+    for i in matrix:
+        arr_one.append(i[0])
+        if len(i) > 1:
+            arr_two.append(i[1])
+        if len(i) > 2:
+            arr_three.append(i[2])
 
-    return arr_one + arr_two + arr_three
+    return [arr_one] + [arr_two] + [arr_three]
 
-
+def profit(array, coefficients):
+    profit = 0
+    for num in array:
+        for value in coefficients:
+            profit += (num * value)
+    return profit
+        
 def main():
     variables = 3
     matrix = [[2, 1, 8], [4, 2, 0], [5, 4, 3]]
@@ -42,30 +46,26 @@ def main():
 
     const_print = ', '.join([f"CONSTRAINT {i+1}" for i in range(const_count)])
     print("[SUPPLY, " + const_print + ", PROFIT]")
-
-
     for i in range(variables):
         row = matrix[i]
         row_str = ', '.join(str(val) for val in row)
         coefficient = coefficients[i]
         print(f"[variable {i+1}, {row_str}, {coefficient}]")
-
     constraint_str = ', '.join(str(val) for val in constraint_limits)
     print(f"[AVAILABILITY, {constraint_str}]")
 
-    A = np.array(matrix)
+    adjusted_matrix = best_combination(matrix)
+    A = np.array(adjusted_matrix)
     b = np.array(constraint_limits)
     x = np.linalg.inv(A).dot(b)
+    best_profit = profit(x, coefficients)
+    for i in range(variables):
+        profit_for_variable = profit([x[i]], [coefficients[i]])
+        print(f"If only variable {i+1} is made, there would be a profit of: {profit_for_variable}. The number of units would be {x[i]}.")
 
-    print("If only variable {} is made, there would be a profit of: {}. The number of units would be {}.")
-    print("If only variable {} is made, there would be a profit of: {}. The number of units would be {}.")
-    print("If only variable {} is made, there would be a profit of: {}. The number of units would be {}.")
-    print(f"The balanced amount is . The breakdown is: {x} of each of the variables")
-    print("The best possible solution is {} using the Balanced method.")
+    print(f"The balanced amount is {best_profit}. The breakdown is: {x} of each of the variables")
+    print(f"The best possible solution is {best_profit} using the Balanced method.")
 
 
 
 main()
-
-
-
