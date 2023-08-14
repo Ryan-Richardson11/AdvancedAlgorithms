@@ -31,10 +31,7 @@ def best_combination(matrix):
     return [arr_one] + [arr_two] + [arr_three]
 
 def profit(array, coefficients):
-    profit = 0
-    for num in array:
-        for value in coefficients:
-            profit += (num * value)
+    profit = sum(array[i] * coefficients[i] for i in range(len(array)))
     return profit
         
 def main():
