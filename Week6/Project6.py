@@ -17,18 +17,13 @@ def get_coefficients():
     return coeffiecients
 
 def best_combination(matrix):
-    arr_one = []
-    arr_two = []
-    arr_three = []
-
-    for i in matrix:
-        arr_one.append(i[0])
-        if len(i) > 1:
-            arr_two.append(i[1])
-        if len(i) > 2:
-            arr_three.append(i[2])
-
-    return [arr_one] + [arr_two] + [arr_three]
+    adjusted_matrix = []
+    
+    for i in range(len(matrix[0])):
+        column = [matrix[j][i] for j in range(len(matrix))]
+        adjusted_matrix.append(column)
+    
+    return adjusted_matrix
 
 def find_units(array, constraint_limits):
     ratio_arr = [array[i] / constraint_limits[i] for i in range(len(array))]

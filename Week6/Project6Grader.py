@@ -1,18 +1,13 @@
 import numpy as np
 
 def best_combination(matrix):
-    arr_one = []
-    arr_two = []
-    arr_three = []
-
-    for i in matrix:
-        arr_one.append(i[0])
-        if len(i) > 1:
-            arr_two.append(i[1])
-        if len(i) > 2:
-            arr_three.append(i[2])
-
-    return [arr_one] + [arr_two] + [arr_three]
+    adjusted_matrix = []
+    
+    for i in range(len(matrix[0])):
+        column = [matrix[j][i] for j in range(len(matrix))]
+        adjusted_matrix.append(column)
+    
+    return adjusted_matrix
 
 def find_units(array, constraint_limits):
     ratio_arr = [array[i] / constraint_limits[i] for i in range(len(array))]
@@ -32,16 +27,16 @@ def profit(array, coefficients):
         
 def main():
     # Testcase 1 (Chemical Factory)
-    # variables = 3
-    # matrix = [[2, 1, 8], [4, 2, 0], [5, 4, 3]]
-    # constraint_limits = [300, 200, 300]
-    # coefficients = [3000, 2000, 2000]
+    variables = 3
+    matrix = [[2, 1, 8], [4, 2, 0], [5, 4, 3]]
+    constraint_limits = [300, 200, 300]
+    coefficients = [3000, 2000, 2000]
 
     # Testcase 2 (Pants and Jackets)
-    variables = 2
-    matrix = [[2, 2], [3, 1]]
-    constraint_limits = [1500, 1000]
-    coefficients = [50, 40]
+    # variables = 2
+    # matrix = [[2, 2], [3, 1]]
+    # constraint_limits = [1500, 1000]
+    # coefficients = [50, 40]
 
     const_count = len(constraint_limits)
 
