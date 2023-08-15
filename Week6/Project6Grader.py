@@ -70,6 +70,10 @@ main()
 
 
 # Testcase 1 (Chemical Factory) Output
+# Please enter the number of variables: 3
+# Enter the data for the square matrix stating the constraints, separate each row with a semicolon and each value with a space (ex. 2 1 8:4 2 0:5 4 3): 2 1 8:4 2 0:5 4 3
+# Enter the coefficients of each variable for the objective function with a space separating each (ex. 3000 2000 2000): 3000 2000 2000
+# Enter the constraint limits with a space separating each (ex. 300 200 300): 300 200 300
 # [SUPPLY, CONSTRAINT 1, CONSTRAINT 2, CONSTRAINT 3, PROFIT]
 # [variable 1, 2, 1, 8, 3000]
 # [variable 2, 4, 2, 0, 2000]
@@ -83,6 +87,10 @@ main()
 
 
 # Testcase 2 (Pants and Jackets) Output
+# Please enter the number of variables: 2
+# Enter the data for the square matrix stating the constraints, separate each row with a semicolon and each value with a space (ex. 2 1 8:4 2 0:5 4 3): 2 2:3 1
+# Enter the coefficients of each variable for the objective function with a space separating each (ex. 3000 2000 2000): 50 40
+# Enter the constraint limits with a space separating each (ex. 300 200 300): 1500 1000
 # [SUPPLY, CONSTRAINT 1, CONSTRAINT 2, PROFIT]
 # [variable 1, 2, 2, 50]
 # [variable 2, 3, 1, 40]
