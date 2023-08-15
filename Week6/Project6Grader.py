@@ -67,3 +67,27 @@ def main():
 
 
 main()
+
+
+# Testcase 1 (Chemical Factory) Output
+# [SUPPLY, CONSTRAINT 1, CONSTRAINT 2, CONSTRAINT 3, PROFIT]
+# [variable 1, 2, 1, 8, 3000]
+# [variable 2, 4, 2, 0, 2000]
+# [variable 3, 5, 4, 3, 2000]
+# [AVAILABILITY, 300, 200, 300]
+# If only variable 1 is made, there would be a profit of: 111000. The number of units would be 37.
+# If only variable 2 is made, there would be a profit of: 150000. The number of units would be 75.
+# If only variable 3 is made, there would be a profit of: 100000. The number of units would be 50.
+# The balanced amount is 183333.3333333333. The breakdown is: [25.         20.83333333 33.33333333] of each of the variables
+# The best possible solution is 183333.3333333333 using the Balanced method.
+
+
+# Testcase 2 (Pants and Jackets) Output
+# [SUPPLY, CONSTRAINT 1, CONSTRAINT 2, PROFIT]
+# [variable 1, 2, 2, 50]
+# [variable 2, 3, 1, 40]
+# [AVAILABILITY, 1500, 1000]
+# If only variable 1 is made, there would be a profit of: 25000. The number of units would be 500.
+# If only variable 2 is made, there would be a profit of: 20000. The number of units would be 500.
+# The balanced amount is 28750.0. The breakdown is: [375. 250.] of each of the variables
+# The best possible solution is 28750.0 using the Balanced method.
