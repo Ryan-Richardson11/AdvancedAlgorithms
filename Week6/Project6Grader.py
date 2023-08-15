@@ -1,9 +1,6 @@
 import numpy as np
 
 def best_combination(matrix):
-    """
-    best_combination(): Returns converted matrix from one that prints out the table to one that can be used in numpy.
-    """
     adjusted_matrix = []
     
     for i in range(len(matrix[0])):
@@ -13,11 +10,6 @@ def best_combination(matrix):
     return adjusted_matrix
 
 def find_units(array, constraint_limits):
-    """
-    find_units(): Finds the number of units by finding the limiting ratio of each subarray to its constraint, 
-    then divides the constraint by the value in that index to get units.
-    Parameters: An array and its constraints.
-    """
     ratio_arr = [array[i] / constraint_limits[i] for i in range(len(array))]
     limit_ratio = max(ratio_arr)
     limit_index = ratio_arr.index(limit_ratio)
