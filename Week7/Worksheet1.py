@@ -6,18 +6,24 @@ def generate_array():
         arr.append(random.randint(0,1))
     return arr
 
-def find_one(arr):
-    count = 0
+def find_one(arr, k):
+    k_count = 0
     while True:
         idx = random.randint(0,10_000)
-        count += 1
         if arr[idx] == 1:
-            print(f"1 was found at index {idx} after {count} tries")
+            print(f"1 was found at index {idx}")
             break
+        elif arr[idx] != 1:
+            k -= 1
+            k_count += 1
+            if k == 0:
+                print(f"Program timed out. Could not locate a 1 after {k_count} tries.")
+                break
 
 def main():
-
-    arr = generate_array()
-    find_one(arr)
-
+    while True:
+        k = int(input("Please enter a limit for the Monte Carlo algorithm: "))
+        arr = generate_array()
+        find_one(arr, k)
+        
 main()
