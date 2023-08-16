@@ -13,7 +13,7 @@ def find_one(arr, k):
     """
     find_one(): Searches a random index between 0 and 10,000. If 1 is the value the index is returned.
     Stops if one is not found after k tries.
-    Parameters: A random array and number of attempts (k).
+    Parameters: A random array of 0's and 1's and number of attempts (k).
     """
     k_count = 0
     while True:
