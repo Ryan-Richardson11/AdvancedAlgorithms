@@ -7,6 +7,7 @@ def generate_array():
     return arr
 
 def find_one(arr, k):
+    k_count = 0
     while True:
         idx = random.randint(0,10_000)
         if arr[idx] == 1:
@@ -14,8 +15,9 @@ def find_one(arr, k):
             break
         elif arr[idx] != 1:
             k -= 1
+            k_count += 1
             if k == 0:
-                print(f"Program timed out. Could not locate a 1 after {k} tries.")
+                print(f"Program timed out. Could not locate a 1 after {k_count} tries.")
                 break
 
 def main():
