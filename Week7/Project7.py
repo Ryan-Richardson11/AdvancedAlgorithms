@@ -19,9 +19,9 @@ def hillClimb(arr, start_index):
     if arr[start_index] > arr[start_index-1] and arr[start_index] > arr[start_index+1]:
         return arr[start_index]
     elif arr[start_index] <= arr[start_index+1]:
-        return hillClimb(arr, [start_index+1])
+        return hillClimb(arr, start_index+1)
     else:
-        return hillClimb(arr, [start_index-1])
+        return hillClimb(arr, start_index-1)
 
 def main():
     arr = []
