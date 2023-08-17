@@ -1,3 +1,4 @@
+import random
 import math
 log2 = math.log2
 
@@ -11,11 +12,25 @@ def myFunction(x):
     else:
         return (log2(x)**2) - x
 
+def randomIndex():
+    return random.randint(1, 9998)
+
+def hillClimb(arr, start_index):
+    if arr[start_index] > arr[start_index-1] and arr[start_index] > arr[start_index+1]:
+        return arr[start_index]
+    elif arr[start_index] <= arr[start_index+1]:
+        return hillClimb(arr, [start_index+1])
+    else:
+        return hillClimb(arr, [start_index-1])
 
 def main():
     arr = []
     for i in range(0, 1000):
         arr.append(myFunction(i))
     print(arr)
+
+    idx = randomIndex()
+    ans = hillClimb(arr, idx)
+    print(ans)
 
 main()
