@@ -16,7 +16,11 @@ def randomIndex():
     return random.randint(1, 9998)
 
 def hillClimb(arr, start_index):
-    if arr[start_index] > arr[start_index-1] and arr[start_index] > arr[start_index+1]:
+    if start_index == 0:
+        return arr[start_index]
+    elif start_index == len(arr) - 1:
+        return arr[start_index]
+    elif arr[start_index] > arr[start_index-1] and arr[start_index] > arr[start_index+1]:
         return arr[start_index]
     elif arr[start_index] <= arr[start_index+1]:
         return hillClimb(arr, start_index+1)
@@ -25,12 +29,12 @@ def hillClimb(arr, start_index):
 
 def main():
     arr = []
-    for i in range(0, 1000):
+    for i in range(0, 10000):
         arr.append(myFunction(i))
-    print(arr)
 
     idx = randomIndex()
+    print(idx)
     ans = hillClimb(arr, idx)
-    print(ans)
+    print(f"The local Maximum is {ans} at index {arr.index(ans)}")
 
 main()
