@@ -10,3 +10,12 @@ def myFunction(x):
         return (log2(x) * 2)**3
     else:
         return (log2(x)**2) - x
+
+
+def main():
+    arr = []
+    for i in range(0, 1000):
+        arr.append(myFunction(i))
+    print(arr)
+
+main()
