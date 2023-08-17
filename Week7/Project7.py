@@ -33,7 +33,7 @@ def main():
         arr.append(myFunction(i))
 
     idx = randomIndex()
-    print(idx)
+    print(f"Random starting index: {idx}")
     ans = hillClimb(arr, idx)
     print(f"The local Maximum is {ans} at index {arr.index(ans)}")
 
