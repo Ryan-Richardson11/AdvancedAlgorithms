@@ -10,6 +10,12 @@ class TestHillClimb(unittest.TestCase):
         result = hillClimb(arr, start_index)
         self.assertEqual(result, expected_value)
 
+    def test_returns_local_value2(self):
+        arr = [2, 5, 5, 5, 4, 3, 2]
+        expected_value = 5
+        start_index = 5
+        result = hillClimb(arr, start_index)
+        self.assertEqual(result, expected_value)
 
 if __name__ == "__main__":
     unittest.main()
