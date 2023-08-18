@@ -3,9 +3,13 @@ import unittest
 
 class TestHillClimb(unittest.TestCase):
 
-    def returns_local_value(self):
-        self.assertEqual(hillClimb([6,5,5,5,4,3,2], 5),6)
+    def test_returns_local_value(self):
+        arr = [6, 5, 5, 5, 4, 3, 2]
+        expected_value = 6
+        start_index = 5
+        result = hillClimb(arr, start_index)
+        self.assertEqual(result, expected_value)
 
 
-    if __name__ == "__main__":
-        unittest.main()
+if __name__ == "__main__":
+    unittest.main()
