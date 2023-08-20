@@ -25,6 +25,7 @@ def hillClimb(arr, start_index):
     elif arr[start_index] <= arr[start_index-1]:
         return hillClimb(arr, start_index-1)
 
+
 def main():
     arr = [myFunction(i) for i in range(0, 10000)]
     idx = randomIndex()
