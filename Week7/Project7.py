@@ -15,15 +15,28 @@ def myFunction(x):
 def randomIndex():
     return random.randint(1, 9998)
     
+# def hillClimb(arr, start_index):
+#     if start_index == 0 or start_index == len(arr) - 1:
+#         return arr[start_index]
+#     elif arr[start_index] > arr[start_index-1] and arr[start_index] > arr[start_index+1]:
+#         return arr[start_index]
+#     elif arr[start_index] <= arr[start_index+1]:
+#         return hillClimb(arr, start_index+1)
+#     elif arr[start_index] <= arr[start_index-1]:
+#         return hillClimb(arr, start_index-1)
+    
 def hillClimb(arr, start_index):
     if start_index == 0 or start_index == len(arr) - 1:
         return arr[start_index]
-    elif arr[start_index] > arr[start_index-1] and arr[start_index] > arr[start_index+1]:
+    
+    while arr[start_index] <= arr[start_index+1]:
+        start_index += 1
+    
+    while arr[start_index] <= arr[start_index-1]:
+        start_index -= 1
+
+    if arr[start_index] >= arr[start_index-1] and arr[start_index] >= arr[start_index+1]:
         return arr[start_index]
-    elif arr[start_index] <= arr[start_index+1]:
-        return hillClimb(arr, start_index+1)
-    elif arr[start_index] <= arr[start_index-1]:
-        return hillClimb(arr, start_index-1)
 
 
 def main():
